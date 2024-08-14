@@ -4,3 +4,4 @@ import { AddMovieComponent } from './add-movie/add-movie.component';
 export const routes: Routes = [
     {path:"addMovie", component:AddMovieComponent}
 ];
+
