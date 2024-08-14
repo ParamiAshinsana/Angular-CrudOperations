@@ -1,0 +1,23 @@
+<div>
+    <form (ngSubmit)="createItem()" *ngIf="item.id === null">
+      <input [(ngModel)]="item.name" name="name" placeholder="Name" required />
+      <input [(ngModel)]="item.description" name="description" placeholder="Description" required />
+      <button type="submit">Create</button>
+    </form>
+  
+    <form (ngSubmit)="updateItem()" *ngIf="item.id !== null">
+      <input [(ngModel)]="item.name" name="name" placeholder="Name" required />
+      <input [(ngModel)]="item.description" name="description" placeholder="Description" required />
+      <button type="submit">Update</button>
+      <button type="button" (click)="item = { id: null, name: '', description: '' }">Cancel</button>
+    </form>
+  
+    <ul>
+      <li *ngFor="let itm of items">
+        {{ itm.name }} - {{ itm.description }}
+        <button (click)="editItem(itm)">Edit</button>
+        <button (click)="deleteItem(itm.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  
