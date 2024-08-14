@@ -24,7 +24,7 @@ export class AddMovieComponent {
   });
 
   handleSubmit() {
-    const url = "http://localhost:8082/addStudent"
+    const url = "http://localhost:8080/api/v1/movie/saveMovie"
     console.log(this.student.value);
     this.httpClient.post(url,this.student.value).subscribe((response)=>{
       console.log(response);
