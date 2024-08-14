@@ -1,14 +1,18 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { error } from 'console';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-add-student',
-  templateUrl: './add-student.component.html',
-  styleUrl: './add-student.component.css'
+  selector: 'app-add-movie',
+  standalone: true,
+  imports: [
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
+  templateUrl: './add-movie.component.html',
+  styleUrl: './add-movie.component.css'
 })
-export class AddStudentComponent {
+export class AddMovieComponent {
 
   constructor(private httpClient:HttpClient){}
 
@@ -28,5 +32,4 @@ export class AddStudentComponent {
       console.log("error for adding student" + error);
     })
   }
-
 }

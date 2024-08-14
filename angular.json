@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crud-operations": {
+    "test01": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/crud-operations",
+            "outputPath": "dist/test01",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "crud-operations:build:production"
+              "buildTarget": "test01:build:production"
             },
             "development": {
-              "buildTarget": "crud-operations:build:development"
+              "buildTarget": "test01:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +94,6 @@
     }
   },
   "cli": {
-    "analytics": "eb4e697c-6989-40ac-bc24-bc5d7e77769c"
+    "analytics": "f8ae2665-7971-414b-8d41-035d997c10e2"
   }
 }
