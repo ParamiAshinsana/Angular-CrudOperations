@@ -1,22 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CrudComponent } from './crud/crud.component';
+// import { AddStudentComponent } from './add-student/add-student.component';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { ShowStudentComponent } from './show-student/show-student.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrudComponent
+    AddStudentComponent,
+    ShowStudentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideClientHydration()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
