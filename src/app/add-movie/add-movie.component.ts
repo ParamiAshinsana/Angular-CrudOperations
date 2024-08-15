@@ -17,19 +17,21 @@ export class AddMovieComponent {
   constructor(private httpClient:HttpClient){}
 
   student = new FormGroup({
-    name: new FormControl(),
     id: new FormControl(),
-    age: new FormControl(),
-    dept: new FormControl()
+    title: new FormControl(),
+    director: new FormControl()
   });
 
   handleSubmit() {
     const url = "http://localhost:8080/api/v1/movie/saveMovie"
     console.log(this.student.value);
+    console.log("hello movie");
+    
     this.httpClient.post(url,this.student.value).subscribe((response)=>{
       console.log(response);
     },error=> {
       console.log("error for adding student" + error);
     })
   }
+
 }
